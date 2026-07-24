@@ -15,6 +15,8 @@ compose step by step, and decode.
 - A six-step, reversible introduction showing speech become a sentence before any jargon
 - A plain-language bridge explaining training, weight sources, weighted versus unweighted
   search, and why a real graph is not simply vocabulary²
+- A seven-step weight workshop following data through probability estimation, negative-log
+  conversion, graph compilation, runtime acoustic scoring, and held-out evaluation
 - An interactive dense-versus-sparse bigram scale comparison
 - A live L ∘ G construction lab with product-state stepping
 - Editable language-model costs that flip the decoded best path

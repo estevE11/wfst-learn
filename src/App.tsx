@@ -5,6 +5,7 @@ import { EvolutionSection } from "./components/EvolutionSection";
 import { FstGraph } from "./components/FstGraph";
 import { FoundationsBridge } from "./components/FoundationsBridge";
 import { GoalDemo } from "./components/GoalDemo";
+import { WeightWorkshop } from "./components/WeightWorkshop";
 import { ConceptLink, ConceptProgress } from "./concepts/ConceptExplorer";
 import { CONCEPTS } from "./concepts/data";
 
@@ -91,6 +92,7 @@ function App() {
     <>
       <GoalDemo />
       <FoundationsBridge />
+      <WeightWorkshop />
       <div className="app-shell" id="technical-lab">
       <aside className="lesson-rail">
         <a className="brand" href="#top" aria-label="wfst-lab home">

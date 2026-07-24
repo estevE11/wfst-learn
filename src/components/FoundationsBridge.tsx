@@ -257,8 +257,8 @@ export function FoundationsBridge() {
         </span>
       </div>
 
-      <a className="foundations__continue" href="#technical-lab">
-        Now open the machine <span aria-hidden="true">↓</span>
+      <a className="foundations__continue" href="#weight-training">
+        Follow one weight from data to arc <span aria-hidden="true">↓</span>
       </a>
     </section>
   );
