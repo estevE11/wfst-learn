@@ -1,7 +1,9 @@
 import { useMemo, useState } from "react";
 import "./App.css";
 import { WFST, Tropical, compose, composeSteps, shortestPath, EPSILON } from "./fst";
+import { EvolutionSection } from "./components/EvolutionSection";
 import { FstGraph } from "./components/FstGraph";
+import { FoundationsBridge } from "./components/FoundationsBridge";
 import { GoalDemo } from "./components/GoalDemo";
 import { ConceptLink, ConceptProgress } from "./concepts/ConceptExplorer";
 import { CONCEPTS } from "./concepts/data";
@@ -88,7 +90,8 @@ function App() {
   return (
     <>
       <GoalDemo />
-      <div className="app-shell" id="lesson-start">
+      <FoundationsBridge />
+      <div className="app-shell" id="technical-lab">
       <aside className="lesson-rail">
         <a className="brand" href="#top" aria-label="wfst-lab home">
           <span className="brand-mark" aria-hidden="true">
@@ -364,9 +367,11 @@ function App() {
           </div>
         </section>
 
+        <EvolutionSection />
+
         <footer>
           <span>wfst-lab · from-scratch decoding intuition</span>
-          <span>Next: determinization and minimization</span>
+          <a href="#lesson-start">Back to the four questions ↑</a>
         </footer>
       </main>
       </div>

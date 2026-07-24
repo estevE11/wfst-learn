@@ -13,9 +13,14 @@ compose step by step, and decode.
 - Tropical shortest path / Viterbi decoding
 - Graphviz rendering in the browser through WebAssembly
 - A six-step, reversible introduction showing speech become a sentence before any jargon
+- A plain-language bridge explaining training, weight sources, weighted versus unweighted
+  search, and why a real graph is not simply vocabulary²
+- An interactive dense-versus-sparse bigram scale comparison
 - A live L ∘ G construction lab with product-state stepping
 - Editable language-model costs that flip the decoded best path
 - 37 linked concept explainers, interactive semiring/weight demos, and saved progress
+- A closing optimization and architecture history from classical HCLG through CTC, RNN-T,
+  Whisper, and newer transcription models
 
 The longer learning and implementation direction lives in [IDEA.md](./IDEA.md).
 

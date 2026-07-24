@@ -127,7 +127,7 @@ export function GoalDemo() {
           wfst-lab
         </a>
         <button type="button" className="goal-demo__skip" onClick={enterLesson}>
-          Skip to the lab ↓
+          Skip to the core answers ↓
         </button>
       </div>
 
@@ -372,9 +372,9 @@ export function GoalDemo() {
 
         {step === DEMO_STEPS.length - 1 && (
           <div className="goal-player__handoff">
-            <p>You have seen the destination. Now open the machine and build the route finder.</p>
+            <p>You have seen the destination. Next, answer the four questions behind the machine.</p>
             <button type="button" onClick={enterLesson}>
-              See how the machine is built ↓
+              Understand graph, weights, and scale ↓
             </button>
           </div>
         )}
