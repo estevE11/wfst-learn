@@ -4,6 +4,8 @@ An interactive, from-scratch introduction to weighted finite-state transducers f
 recognition. The app turns the usual H ∘ C ∘ L ∘ G diagram into machines you can inspect,
 compose step by step, and decode.
 
+**[Open the live learning lab](https://esteve11.github.io/wfst-learn/)**
+
 ## What works
 
 - A typed WFST data structure with tropical and log semirings
