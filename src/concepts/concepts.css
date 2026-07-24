@@ -1,0 +1,351 @@
+/* Concept-explainer layer styles. Self-contained; relies only on the CSS
+   custom properties already defined in src/index.css (--text, --bg,
+   --border, --panel-bg, --accent), with sane fallbacks so this still looks
+   fine if mounted somewhere those aren't set. */
+
+.concept-link {
+  display: inline;
+  font: inherit;
+  color: var(--accent, #1a73e8);
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-style: dotted;
+}
+
+.concept-link:hover,
+.concept-link:focus-visible {
+  text-decoration-style: solid;
+  color: var(--text-h, #111);
+}
+
+.concept-link:focus-visible {
+  outline: 2px solid var(--accent, #1a73e8);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ---------------------------------------------------------------- drawer */
+
+.concept-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 40;
+  animation: concept-fade-in 120ms ease-out;
+}
+
+.concept-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(520px, 100vw);
+  background: var(--panel-bg, #fff);
+  color: var(--text, #222);
+  border-left: 1px solid var(--border, #ddd);
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.15);
+  z-index: 41;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  animation: concept-slide-in 160ms ease-out;
+}
+
+@keyframes concept-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes concept-slide-in {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.concept-drawer__header {
+  position: sticky;
+  top: 0;
+  background: var(--panel-bg, #fff);
+  border-bottom: 1px solid var(--border, #ddd);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.concept-drawer__eyebrow {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.concept-drawer__icon-btn {
+  background: none;
+  border: 1px solid var(--border, #ddd);
+  color: inherit;
+  border-radius: 6px;
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  flex: none;
+}
+
+.concept-drawer__icon-btn:hover,
+.concept-drawer__icon-btn:focus-visible {
+  background: rgba(127, 127, 127, 0.15);
+}
+
+.concept-drawer__body {
+  padding: 1.5rem 1.75rem 2rem;
+}
+
+.concept-drawer__term {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+}
+
+.concept-drawer__one-liner {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-h, #111);
+  margin: 0 0 1rem;
+}
+
+.concept-drawer__widget {
+  margin: 1rem 0;
+  border: 1px solid var(--border, #ccc);
+  border-radius: 12px;
+  padding: 0.8rem;
+  background: var(--bg);
+}
+
+.concept-drawer__widget-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text, #888);
+  margin: 0 0 0.5rem;
+}
+
+.concept-widget-bridge {
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  background: var(--panel-bg);
+}
+
+.concept-widget-bridge__icon {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  background: var(--accent);
+}
+
+.concept-widget-bridge strong {
+  font-size: 0.84rem;
+}
+
+.concept-widget-bridge p {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.concept-drawer__section-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text, #888);
+  margin: 1.25rem 0 0.4rem;
+}
+
+.concept-drawer__body-text p {
+  margin: 0 0 0.75rem;
+  line-height: 1.55;
+  font-size: 0.9rem;
+}
+
+.concept-drawer__why {
+  border-left: 3px solid var(--accent, #1a73e8);
+  padding: 0.5rem 0.75rem;
+  background: rgba(26, 115, 232, 0.06);
+  border-radius: 0 6px 6px 0;
+  margin: 0.5rem 0 1rem;
+}
+
+.concept-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.concept-chip {
+  border: 1px solid var(--border, #ddd);
+  background: var(--bg, #fafafa);
+  color: var(--accent, #1a73e8);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.concept-chip:hover,
+.concept-chip:focus-visible {
+  border-color: var(--accent, #1a73e8);
+  background: rgba(26, 115, 232, 0.08);
+}
+
+.concept-drawer__empty {
+  padding: 2rem 1rem;
+  color: var(--text, #888);
+  font-style: italic;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------- demo page */
+
+.concepts-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.concepts-demo__intro {
+  max-width: 70ch;
+  line-height: 1.6;
+  font-size: 1.02rem;
+}
+
+.concepts-demo__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.concept-card {
+  text-align: left;
+  border: 1px solid var(--border, #ddd);
+  background: var(--panel-bg, #fff);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  cursor: pointer;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-decoration: none;
+}
+
+.concept-card:hover,
+.concept-card:focus-visible {
+  border-color: var(--accent, #1a73e8);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.concept-card__term {
+  font-weight: 600;
+  color: var(--text-h, #111);
+}
+
+.concept-card__one-liner {
+  font-size: 0.85rem;
+  color: var(--text, #666);
+  line-height: 1.4;
+}
+
+.concept-card__badge {
+  align-self: flex-start;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--accent, #1a73e8);
+  border: 1px solid var(--accent, #1a73e8);
+  border-radius: 999px;
+  padding: 0.05rem 0.4rem;
+  margin-top: 0.15rem;
+}
+
+.concept-progress {
+  margin-top: auto;
+}
+
+.concept-progress > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.concept-progress strong {
+  color: var(--ink);
+  font: 500 10px/1 "DM Mono", monospace;
+}
+
+.concept-progress__track {
+  height: 5px;
+  margin-top: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #d4d0c5;
+}
+
+.concept-progress__track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+  transition: width 180ms ease;
+}
+
+.understood-button {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 9px;
+  color: var(--accent-dark);
+  background: transparent;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.understood-button span {
+  margin-right: 8px;
+}
+
+.understood-button.is-understood {
+  color: #fff;
+  background: var(--accent);
+}

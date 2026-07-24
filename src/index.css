@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --ink: #16211d;
+  --muted: #67736e;
+  --bg: #f3f1ea;
+  --panel-bg: #fffef9;
+  --panel-soft: #ebe8de;
+  --border: #d8d5cb;
+  --accent: #087f5b;
+  --accent-dark: #075c44;
+  --accent-soft: #d9f3e9;
+  --warm: #d87932;
+  --warm-soft: #fff0dc;
+  --text: var(--ink);
+  --text-h: #0b1410;
+  font: 16px/1.55 "Manrope", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text-h);
+  line-height: 1.12;
+}
+
+code,
+.mono {
+  font-family: "DM Mono", ui-monospace, monospace;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  outline-offset: 3px;
+}
+
+::selection {
+  color: #fff;
+  background: var(--accent);
+}

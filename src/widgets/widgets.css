@@ -1,0 +1,348 @@
+/* Shared styling for the concept-explainer mini widgets. Each widget is a
+ * small, self-contained interactive demo; this file keeps them visually
+ * consistent without pulling in any new dependency. */
+
+.widget {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel-bg);
+  padding: 16px;
+  font-size: 14px;
+  color: var(--text);
+  max-width: 780px;
+}
+
+.widget--compact {
+  padding: 12px;
+}
+
+.widget h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.widget-desc {
+  margin: 0 0 12px;
+  color: var(--text);
+  opacity: 0.85;
+}
+
+.widget-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.widget-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.widget-graphs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .widget-graphs {
+    grid-template-columns: 1fr;
+  }
+}
+
+.widget-graphs.widget-graphs-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 900px) {
+  .widget-graphs.widget-graphs-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.widget button {
+  font: inherit;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background: var(--panel-bg);
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.widget button:hover:not(:disabled) {
+  background: var(--accent);
+  color: #fff;
+}
+
+.widget button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.widget button.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.widget button.primary:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+.widget select,
+.widget input[type="text"] {
+  font: inherit;
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.widget input[type="range"] {
+  accent-color: var(--accent);
+  min-width: 160px;
+}
+
+.widget label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.widget .mono {
+  font-family: ui-monospace, Consolas, monospace;
+}
+
+.widget-note {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border-left: 3px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.widget-stat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.widget-stat .label {
+  opacity: 0.7;
+}
+
+.widget-stat .value {
+  font-family: ui-monospace, Consolas, monospace;
+  font-weight: 600;
+}
+
+.widget-stat.winner {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.widget-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.widget-table th,
+.widget-table td {
+  text-align: left;
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.widget-hyp-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.widget-hyp-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--bg);
+  font-size: 13px;
+}
+
+.widget-hyp-row:hover {
+  border-color: var(--accent);
+}
+
+.widget-hyp-row.selected {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.widget-hyp-row.best .rank {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.widget-log {
+  max-height: 140px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 12px;
+  background: var(--bg);
+}
+
+.widget-log div {
+  padding: 2px 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.widget-log div:last-child {
+  border-bottom: none;
+}
+
+.widget-phones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.widget-phone {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--bg);
+  font-family: ui-monospace, Consolas, monospace;
+}
+
+.widget-phone:hover {
+  border-color: var(--accent);
+}
+
+.widget-phone.selected {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.widget-timeline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin: 10px 0;
+}
+
+.widget-frame {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-family: ui-monospace, Consolas, monospace;
+  color: #fff;
+}
+
+.widget-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.widget-gallery-item h4 {
+  margin: 0 0 8px;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.widget-fallback {
+  padding: 12px;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  opacity: 0.7;
+  font-size: 13px;
+}
+
+.widget-slider {
+  display: grid !important;
+  grid-template-columns: 92px 1fr;
+  margin: 14px 0;
+}
+
+.weight-equation {
+  display: grid;
+  grid-template-columns: 1fr auto 54px;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--bg);
+  font-family: "DM Mono", ui-monospace, monospace;
+}
+
+.weight-equation strong {
+  color: var(--accent);
+  font-size: 1.15rem;
+  text-align: right;
+}
+
+.probability-track {
+  height: 6px;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--border);
+}
+
+.probability-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+  transition: width 100ms ease;
+}
+
+.concept-drawer .widget {
+  padding: 10px;
+  border: 0;
+}
+
+.concept-drawer .widget h3 {
+  font-size: 14px;
+}
+
+.concept-drawer .widget-desc,
+.concept-drawer .widget-note {
+  font-size: 11px;
+}
+
+.concept-drawer .widget .fst-graph-svg {
+  min-height: 150px;
+}
